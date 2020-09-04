@@ -55,30 +55,30 @@ axios.get ('https://lambda-times-api.herokuapp.com/articles')
     })
 
 
-const fakeArticle = {
-    authorName: "PUPPER S. DOGGO",
-    authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
-    headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
-    id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
-    topic: 'javascript'
-}
+// const fakeArticle = {
+//     authorName: "PUPPER S. DOGGO",
+//     authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
+//     headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
+//     id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
+//     topic: 'javascript'
+// }
 
 
-const fakeArticleArr = [{
-    authorName: "PUPPER S. DOGGO",
-    authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
-    headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
-    id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
-    topic: 'javascript'
-},
-{
-    authorName: "PUPPER S. DOGGO",
-    authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
-    headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
-    id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
-    topic: 'javascript'
-}
-]
+// const fakeArticleArr = [{
+//     authorName: "PUPPER S. DOGGO",
+//     authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
+//     headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
+//     id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
+//     topic: 'javascript'
+// },
+// {
+//     authorName: "PUPPER S. DOGGO",
+//     authorPhoto: "https://tk-assets.lambdaschool.com/44260ce3-c8f0-4db8-bc1d-9877662fdf96_puppers.jpg",
+//     headline: "When to Rest, When to Spread: Why There Are Two Meanings Behind '...'",
+//     id: "f19cea1d-4606-40c1-9c3a-abf9a31591f0",
+//     topic: 'javascript'
+// }
+// ]
 
 const articlesContainer = document.querySelector('div.cards-container');
 
@@ -111,7 +111,7 @@ function articleMaker (dataArr,container){
         //click listener
         articleCard.addEventListener('click',(e)=>{
             e.stopPropagation;
-            console.log('test');
+            console.log(article.headline);
             // console.log(e.currenttarget)
             // e.stopPropagation;
         });
