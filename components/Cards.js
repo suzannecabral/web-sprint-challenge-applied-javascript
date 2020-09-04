@@ -124,7 +124,7 @@ function articleMaker (dataArr,container){
 
         //conenct elements
         imgContainer.append(img)
-        authorDiv.append(imgContainer);
+        authorDiv.append(imgContainer,authorName);
         articleCard.append(headline,authorDiv,);
 
         //click listener
