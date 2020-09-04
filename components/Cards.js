@@ -24,12 +24,10 @@ import axios from 'axios';
 //
 // Use your function to create a card for each of the articles, and append each card to the DOM.
 
-// const { default: Axios } = require("axios");
-
 axios.get ('https://lambda-times-api.herokuapp.com/articles')
     .then((result)=>{
         const articleData = result.data.articles;
-        console.log(articleData);
+        // console.log(articleData);
 
         const articleArray = [];
 
@@ -44,26 +42,9 @@ axios.get ('https://lambda-times-api.herokuapp.com/articles')
             });
         //works: adds articles to array individually
         });
-        console.log(articleArray);
+        // console.log(articleArray);
 
         articleMaker(articleArray,articlesContainer);
-
-
-        // //for each topic:
-        // articleData.forEach((topic)=>{
-
-        //     //take each article 
-        //     topic.forEach((article)=>{
-        //         console.log(article);
-        //         //add a "topic" property
-        //         //and add it to the array
-
-            
-        //     //ending articles
-        //     });
-
-        // //ending topics    
-        // });
 
 
     //ending .then    
@@ -137,7 +118,7 @@ function articleMaker (dataArr,container){
 
         //append to html
         container.append(articleCard);
-        console.log(articleCard);
+        // console.log(articleCard);
     });
 }
 
