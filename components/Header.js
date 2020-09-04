@@ -12,3 +12,4 @@
 // and append it to the DOM inside the div.header-container
 
 function Header() {}
+ 
