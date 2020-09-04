@@ -10,9 +10,22 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
  
-const fakeData = {"topics":["javascript","bootstrap","technology","jquery","node.js"]};
-const fakeDataTopics = fakeData.topics;
-console.log(fakeDataTopics);
+
+axios.get('https://lambda-times-api.herokuapp.com/topics')
+    .then((result)=>{
+        const topicData = result.data.topics;
+        console.log(topicData);
+        tabMaker(topicData,tabContainer);
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
+
+
+// const fakeData = {"topics":["javascript","bootstrap","technology","jquery","node.js"]};
+// const fakeDataTopics = fakeData.topics;
+// console.log(fakeDataTopics);
 
 const tabContainer = document.querySelector('div.topics');
 
@@ -25,4 +38,6 @@ function tabMaker (data, container) {
     });
 }
 
-tabMaker(fakeDataTopics,tabContainer);
+
+// tabMaker(fakeDataTopics,tabContainer);
+
