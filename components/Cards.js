@@ -31,17 +31,24 @@ axios.get ('https://lambda-times-api.herokuapp.com/articles')
         const articleData = result.data.articles;
         console.log(articleData);
 
-        const dataKeys = Object.entries(articleData);
-        console.log(dataKeys);
-
-
-
-
         const articleArray = [];
 
+        const dataKeys = Object.entries(articleData);
+        // console.log(dataKeys);
+
+        dataKeys.forEach((topic)=>{
+            topic[1].map((article)=>{
+                article.topic = topic[0];
+                //works: adds topic to each article
+                articleArray.push(article);
+            });
+        //works: adds articles to array individually
+        });
+        console.log(articleArray);
+
+        articleMaker(articleArray,articlesContainer);
 
 
-        
         // //for each topic:
         // articleData.forEach((topic)=>{
 
@@ -95,7 +102,6 @@ const fakeArticleArr = [{
 const articlesContainer = document.querySelector('div.cards-container');
 
 function articleMaker (dataArr,container){ 
-    
     dataArr.forEach((article)=>{
         //create elements
         const articleCard = document.createElement('div');
@@ -121,12 +127,19 @@ function articleMaker (dataArr,container){
         authorDiv.append(imgContainer);
         articleCard.append(headline,authorDiv,);
 
+        //click listener
+        articleCard.addEventListener('click',(e)=>{
+            e.stopPropagation;
+            console.log('test');
+            // console.log(e.currenttarget)
+            // e.stopPropagation;
+        });
+
         //append to html
         container.append(articleCard);
         console.log(articleCard);
     });
-
 }
 
 
-articleMaker(fakeArticleArr,articlesContainer);
+// articleMaker(fakeArticleArr,articlesContainer);
