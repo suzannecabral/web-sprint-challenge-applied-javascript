@@ -10,3 +10,19 @@
 //
 // NOTE: you do _not_ need to install axios as it's included in the HTML via script element
  
+const fakeData = {"topics":["javascript","bootstrap","technology","jquery","node.js"]};
+const fakeDataTopics = fakeData.topics;
+console.log(fakeDataTopics);
+
+const tabContainer = document.querySelector('div.topics');
+
+function tabMaker (data, container) {
+    data.forEach((item) => {
+        const newTab = document.createElement('div');
+        newTab.classList.add('tab');
+        newTab.innerHTML = item;
+        container.append(newTab);
+    });
+}
+
+tabMaker(fakeDataTopics,tabContainer);
